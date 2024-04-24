@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: db-environments
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=test-environments
+    ports:
+      - "3307:3306"
+    volumes:
+      - "db-test:/var/lib/mysql"
+
+
+volumes:
+  db-test:

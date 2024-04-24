@@ -1,0 +1,9 @@
+INSERT INTO employee(id, name) VALUES(default, 'Jorge');
+INSERT INTO employee(id, name) VALUES(default, 'Vicente');
+INSERT INTO employee(id, name) VALUES(default, 'Erik');
+INSERT INTO employee(id, name) VALUES(default, 'Cielo');
+INSERT INTO employee(id, name) VALUES(default, 'Patricia');
+INSERT INTO employee(id, name) VALUES(default, 'Barbara');
+INSERT INTO employee(id, name) VALUES(default, 'Alondra');
+INSERT INTO employee(id, name) VALUES(default, 'Nancy');
+INSERT INTO employee(id, name) VALUES(default, 'Lupita');
