@@ -43,7 +43,93 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<!-- Perfil de desarrollo -->
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- hacer que spring boot se adapte a la configuracion de ambientes -->
+				<build.profile.id>dev</build.profile.id>
+				<profileActive>dev</profileActive>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<!-- directorio del archivo de configuracion -->
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+						<includes>
+							<include>application-dev.properties</include>
+						</includes>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<!-- Perfil de testing -->
+		<profile>
+			<id>testing</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<!-- hacer que spring boot se adapte a la configuracion de ambientes -->
+				<build.profile.id>testing</build.profile.id>
+				<profileActive>testing</profileActive>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<!-- directorio del archivo de configuracion -->
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+						<includes>
+							<include>application-testing.properties</include>
+						</includes>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<!-- Perfil de produccion -->
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<!-- hacer que spring boot se adapte a la configuracion de ambientes -->
+				<build.profile.id>prod</build.profile.id>
+				<profileActive>prod</profileActive>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<!-- directorio del archivo de configuracion -->
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+						<includes>
+							<include>application-prod.properties</include>
+						</includes>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+
 	<build>
+		<!-- configuracion cuando no funcione los perfiles -->
+		<!-- activar filtrado de perfiles -->
+		<!--<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>application-*.properties</exclude>
+				</excludes>
+			</resource>
+		</resources>-->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
